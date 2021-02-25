@@ -13,9 +13,9 @@ Go to ```http://localhost:3000/signupadmin``` to get to the first page of the ap
 Go to ```http://localhost:3000/signupstaff``` to get to the first page of the application for staff
 
 Since we don't want admins or staff making their own accounts, I have set up some users for us to use in the database:  <br />
-  Admin:  <br />
-    Username: admin  <br />
-    Password: password  <br />
-  Staff:  return
-    Username: staff  <br />
-    Password: password  <br />
+  &nbsp;Admin:  <br />
+    &nbsp;&nbsp;Username: admin  <br />
+    &nbsp;&nbsp;Password: password  <br />
+  &nbsp;Staff:  <br />
+    &nbsp;&nbsp;Username: staff  <br />
+    &nbsp;&nbsp;Password: password  <br />
