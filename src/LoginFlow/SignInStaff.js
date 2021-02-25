@@ -4,7 +4,7 @@ import '../bootstrap.scss';
 import Loader from 'react-loader-spinner';
 const client = require('../Utilities/client');
 
-class SignIn extends React.Component {
+class SignInStaff extends React.Component {
 
     constructor(props) {
         super(props);
@@ -48,9 +48,9 @@ class SignIn extends React.Component {
         }
 
 
-        client.post('/api/adminUsers/login', formFields)
+        client.post('/api/staffUsers/login', formFields)
             .then(function(response){
-                window.location.href = '/admin';
+                window.location.href = '/staff';
             })
             .catch(error => {
                 this.setState({
@@ -112,4 +112,4 @@ class SignIn extends React.Component {
     }
 }
 
-export default SignIn;
+export default SignInStaff;

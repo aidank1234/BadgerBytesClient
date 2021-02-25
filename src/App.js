@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import SignUp from "./LoginFlow/SignUp";
 import SignIn from "./LoginFlow/SignIn";
-import Menu from "./MainApp/Menu";
-import CreateOrder from "./MainApp/CreateOrder";
+import AdminMain from "./MainApp/AdminMain";
+import StaffMain from "./MainApp/StaffMain";
+import SignInStaff from "./LoginFlow/SignInStaff";
 
 class App extends React.Component{
 
@@ -16,10 +16,10 @@ class App extends React.Component{
   render () {
     return (
         <Router>
-          <Route path="/signup" exact={true} component={() => <SignUp />} />
-          <Route path="/signin" exact={true} component={SignIn} />
-          <Route path="/menu" exact={true} component={Menu} />
-            <Route path="/order" exact={true} component={CreateOrder} />
+          <Route path="/signinadmin" exact={true} component={SignIn} />
+          <Route path="/signinstaff" exact={true} component={SignInStaff} />
+          <Route path="/admin" exact={true} component={AdminMain} />
+          <Route path="/staff" exact={true} component={StaffMain} />
         </Router>
     );
   }
