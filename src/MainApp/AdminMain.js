@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css'
+import AdminAddItem from "./AdminAddItem";
 
 class AdminMain extends React.Component{
 
@@ -11,7 +12,7 @@ class AdminMain extends React.Component{
     render () {
         return (
             <div>
-                THIS WILL BE THE PAGE WHERE ADMIN ACTIONS CAN BE DONE
+                <AdminAddItem />
             </div>
         );
     }
