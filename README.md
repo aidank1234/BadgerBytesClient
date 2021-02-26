@@ -8,6 +8,8 @@ Once you do that, run ```npm install``` to install needed dependencies
 
 Run ```npm start``` to start the application on port 3000
 
+If you try to compile and run into issues with DatePicker dependencies, run the command ```npm install date-fns --save``` and try to compile again
+
 Go to ```http://localhost:3000/signupadmin``` to get to the first page of the application for admins
 
 Go to ```http://localhost:3000/signupstaff``` to get to the first page of the application for staff
