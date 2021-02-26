@@ -23,6 +23,7 @@ class StaffMarkOrdersComplete extends React.Component{
                         "cost": response.data[i].cost,
                         "pickUpTime": response.data[i].pickUpTime,
                         "car": response.data[i].car,
+                        "highPriority": response.data[i].highPriority,
                         "_id": response.data[i]._id
                     };
                     tempNames.push(newOrder)
@@ -56,6 +57,24 @@ class StaffMarkOrdersComplete extends React.Component{
             });
     };
 
+    markOrderHighPriority = (order) => {
+        client.post('/api/order/priority', {_id: order._id})
+            .then(() => {
+                let namesState = this.state.names;
+                for(let i=0; i<namesState.length; i++) {
+                    if(order._id === namesState[i]._id) {
+                        namesState[i].highPriority = true;
+                        break
+                    }
+                }
+                this.setState({names: namesState});
+                alert("Order successfully marked high priority")
+            })
+            .catch(error => {
+                alert(error);
+            });
+    };
+
 
     render () {
         return (
@@ -72,6 +91,8 @@ class StaffMarkOrdersComplete extends React.Component{
                                     <td style={{"width": "16.67%"}}>{"Total Cost USD: " + item.cost}</td>
                                     <td style={{"width": "16.67%"}}>{"Pick Up Time: " + item.pickUpTime}</td>
                                     <td style={{"width": "16.67%"}}>{"Pick Up Car: " + item.car}</td>
+                                    <td style={{"width": "16.67%"}}>{"Is High Priority: " + item.highPriority}</td>
+                                    <td style={{"width": "16.67%"}}><button onClick={() => this.markOrderHighPriority(item)}>Mark High Priority</button></td>
                                     <td style={{"width": "16.67%"}}><button onClick={() => this.markOrderComplete(item)}>Complete Order</button></td>
                                 </tr>
                                 </tbody>
