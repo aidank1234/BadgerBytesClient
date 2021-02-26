@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css'
 import StaffUpdateAvailability from "./StaffUpdateAvailability";
+import StaffMarkOrdersComplete from "./StaffMarkOrdersComplete";
 
 class StaffMain extends React.Component{
 
@@ -13,6 +14,9 @@ class StaffMain extends React.Component{
         return (
             <div>
                 <StaffUpdateAvailability />
+                <br />
+                <br />
+                <StaffMarkOrdersComplete />
             </div>
         );
     }

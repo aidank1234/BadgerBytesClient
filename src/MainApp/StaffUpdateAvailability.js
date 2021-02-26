@@ -7,19 +7,10 @@ class StaffUpdateAvailability extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            formFields: {name: '', price: '', imageURL: '', available: true},
             names: [
             ]
         }
     }
-
-    inputChangeHandler = (e) => {
-        let formFields = {...this.state.formFields};
-        formFields[e.target.name] = e.target.value;
-        this.setState({
-            formFields
-        });
-    };
 
     getAllMenuItems = () => {
         client.get('/api/menuItem/', {})
@@ -46,18 +37,6 @@ class StaffUpdateAvailability extends React.Component{
         this.getAllMenuItems();
     }
 
-    formHandler = (e, formFields) => {
-        e.preventDefault();
-
-        client.post('/api/menuItem/', formFields)
-            .then(function(response){
-                alert("Menu item has been successfully added to database")
-            })
-            .catch(error => {
-                alert("Failed to add menu item to database")
-            });
-    };
-
     updateItemAvailability = (item, e) => {
         client.post('/api/menuItem/availability', {name: item.name, available: !item.available})
             .then(() => {
@@ -71,7 +50,7 @@ class StaffUpdateAvailability extends React.Component{
                 alert("Availability of menu item successfully changed")
             })
             .catch(error => {
-                alert(error)
+                alert(error);
                 e.preventDefault();
             });
     };
