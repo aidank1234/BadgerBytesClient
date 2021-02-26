@@ -1,4 +1,4 @@
-### How to launch Badger Bytes for the first time
+### How to launch Badger Bytes Admin for the first time
 
 First, clone this repository ```git clone https://aidank1234/BadgerBytesClient.git```
 
