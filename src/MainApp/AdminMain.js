@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css'
 import AdminAddItem from "./AdminAddItem";
+import AdminUsageReports from "./AdminUsageReports";
 
 class AdminMain extends React.Component{
 
@@ -13,6 +14,9 @@ class AdminMain extends React.Component{
         return (
             <div>
                 <AdminAddItem />
+                <br />
+                <br />
+                <AdminUsageReports />
             </div>
         );
     }
