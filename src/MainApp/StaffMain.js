@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css'
+import StaffUpdateAvailability from "./StaffUpdateAvailability";
 
 class StaffMain extends React.Component{
 
@@ -11,7 +12,7 @@ class StaffMain extends React.Component{
     render () {
         return (
             <div>
-                THIS WILL BE THE PAGE WHERE STAFF ACTIONS CAN BE DONE
+                <StaffUpdateAvailability />
             </div>
         );
     }
